@@ -10,18 +10,20 @@
 
 
 
+
+import datetime
+
+today = datetime.date.today()
 name = input("Enter your name: ")
 age = int(input("Enter your age: "))
 birthday_day = int(input("Enter your birthday day: "))
 birthday_month = int(input("Enter your birthday month (ex: 12 = december): "))
-current_day = int(input("Enter the current day: "))
-current_month = int(input("Enter the current month: "))
-current_year = int(input("Enter the current year: "))
 
-if birthday_month<current_month and birthday_day<current_day: 
-    print("Hello ", name,"you are ", age, "years old. You were born in ", current_year - age,".")
-elif birthday_month == current_month and birthday_day == current_day:
-    print("Hello ", name, "you are ", age, "years old, and I want to wish you a Happy Birthday. You were born in ", current_year - age,".")
+
+if birthday_month<today.month and birthday_day<today.day: 
+    print("Hello ", name,"you are ", age, "years old. You were born in ", today.year - age,".")
+elif birthday_month == today.month and birthday_day == today.day:
+    print("Hello ", name, "you are ", age, "years old, and I want to wish you a Happy Birthday. You were born in ", today.year - age,".")
 else:
-    print ("Hello ", name,"you are ", age, "years old. You were born in ", current_year - 1 - age)
+    print ("Hello ", name,"you are ", age, "years old. You were born in ", today.year - 1 - age)
 
